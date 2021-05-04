@@ -1,3 +1,26 @@
-.hero-image{
-    width: 100vw;
+.body{
+    min-height: 100vh;
+}
+.navbar{
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+}
+
+.demo-wrap {
+    position: relative;
+    min-height: 100vh;
+}
+
+.demo-bg {
+  opacity: 0.2;
+  background-color: #303030;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.demo-content {
+  position: relative;
 }

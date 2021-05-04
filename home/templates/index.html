@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css%}
+{{block.super}}
+
+{% endblock%}
 
 {% block content %}
-<p> This is a Neon Llama </p>
+<div class="demo-wrap">
+  <img
+    class="demo-bg"
+    src="{{MEDIA_URL}}images//background1.jpg"
+    alt=""
+  >
+  <div class="demo-content">
+    <h4>This is a Neon Llama</h4>
+  </div>
+</div>
 
-<img  class="hero-image" src="{{ MEDIA_URL }}images/pexels-satoshi-hirayama-2890019.jpg"/>
+
+
 
 {% endblock %}
