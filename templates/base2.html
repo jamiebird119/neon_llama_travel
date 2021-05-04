@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    {% endblock %} {% block extra_head %} {% endblock %}
+    {% block css %}
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    {% endblock %}
+    {% block extra_js %}
+
+    {% endblock %}
+    {% block extra_css %}
+    {% endblock %}
+    <title>{% block head_title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header class="container-fluid px-0 ">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand">Logo</a>
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul>
+                        <li class="navlist">This </li>
+                        <li class="navlist">Is </li>
+                        <li class="navlist">A </li>
+                        <li class="navlist">List </li>
+                    </ul>
+                </div>
+
+
+                <div class="d-none d-md-inline">
+                    <h5>The Epic Adventure Society</h5>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    {% block page_header %}
+    {% endblock %}
+
+
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+
+
+
+
+
+    {% endblock %}
+</body>
+
+</html>
