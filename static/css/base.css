@@ -1,3 +1,23 @@
+/* ----- Fonts */
+
+.exo{
+    font-family: 'Exo', sans-serif;
+}
+.architects{
+    font-family: 'Architects Daughter', cursive;
+}
+
+
+/* ----- Colours */
+.neon-blue{
+color: #15f4ee;
+}
+
+.neon-green{
+    color:#39ff14;
+}
+
+/* ----- Base*/
 .body{
     min-height: 100vh;
 }
@@ -6,12 +26,17 @@
     padding-bottom:0.25rem;
 }
 
-.demo-wrap {
+
+/* ----- Index */
+.container-wrap {
     position: relative;
     min-height: 100vh;
 }
 
-.demo-bg {
+.spacer{
+    height: 7rem;
+}
+.index-bg {
   opacity: 0.2;
   background-color: #303030;
   position: absolute;
@@ -21,6 +46,12 @@
   height: auto;
 }
 
-.demo-content {
+.index-content {
   position: relative;
+}
+
+.search-form{
+    border: 0.1rem solid #39ff14;
+    background-color: #303030;
+    padding: 2.5rem;
 }

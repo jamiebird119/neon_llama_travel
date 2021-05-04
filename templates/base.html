@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
     {% block extra_css %}
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     {% endblock %}
     {% block extra_js %}
 
@@ -22,30 +25,28 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand neon-green" href="#">Logo</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02"
                 aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <h4>The Epic Adventure Society</h4>
+        <h4 class="exo">The <i class="neon-blue">Epic</i> Adventure Society</h4>
             <div>
-                <a class="navbar-brand" href="#"><i class="fas fa-user-circle"></i></a>
+                <a class="navbar-brand neon-green" href="#"><i class="fas fa-user-circle"> Login</i></a>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-                <ul>
+            <ul class="navbar-nav mr-auto neon-green">
                     <li class="navlist">This </li>
                     <li class="navlist">Is </li>
                     <li class="navlist">A </li>
                     <li class="navlist">List </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2 neon-green" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0 neon-green" type="submit">Search</button>
                 </form>
-            </ul>
 
         </div>
     </nav>

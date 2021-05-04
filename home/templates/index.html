@@ -6,15 +6,33 @@
 {% endblock%}
 
 {% block content %}
-<div class="demo-wrap">
-  <img
-    class="demo-bg"
-    src="{{MEDIA_URL}}images//background1.jpg"
-    alt=""
-  >
-  <div class="demo-content">
-    <h4>This is a Neon Llama</h4>
-  </div>
+<div class="container-wrap">
+    <img class="index-bg" src="{{MEDIA_URL}}images//background1.jpg" alt="">
+    <div class="index-content">
+        <div class="spacer"></div>
+        <div class="row mt-5">
+            <div class="offset-2 col-8 offset-2 text-center">
+                <h4 class="architects neon-green">This is a Neon Llama</h4>
+            </div>
+            <div class="offset-2 col-8 offset-2 text-center">
+                <form class="form-control search-form form-check-inline py-2">
+                    <input class="form-control d-inline w-25 mx-2 my-2" type="text" placeholder="Search Tour">
+                    <select name="country" id="country" class="form-control d-inline  w-25" form="search">
+                        <option value="Country">Country</option>
+                    </select>
+                    <select class="form-control d-inline  w-25 mx-2 my-2" name="cars" id="cars" form="carform">
+                        <option value="volvo">Tour Type</option>
+                    </select>
+                    <select class="form-control d-inline  w-25 mx-2 my-2" name="cars" id="cars" form="carform">
+                        <option value="volvo">Budget</option>
+                    </select>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 
