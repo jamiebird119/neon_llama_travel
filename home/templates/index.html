@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="container-wrap">
-    <img class="index-bg" src="{{MEDIA_URL}}images//background1.jpg" alt="">
+    <img class="index-bg" src="{{MEDIA_URL}}images//background{{bg_no}}.jpg" alt="">
     <div class="index-content">
         <div class="spacer"></div>
         <div class="row mt-5">
@@ -15,15 +15,19 @@
                 <h4 class="architects neon-green">This is a Neon Llama</h4>
             </div>
             <div class="offset-2 col-8 offset-2 text-center">
-                <form class="form-control search-form form-check-inline py-2">
-                    <input class="form-control d-inline w-25 mx-2 my-2" type="text" placeholder="Search Tour">
-                    <select name="country" id="country" class="form-control d-inline  w-25" form="search">
+                <form class="form-control search-form form-check-inline bg-dark">
+                    <input class="form-control text-white bg-spec-dark d-inline w-25 mx-2 my-2" type="text"
+                        placeholder="&#xf002; Search Tour">
+                    <select name="country" id="country" class="text-white form-control bg-spec-dark d-inline  w-25"
+                        form="search">
                         <option value="Country">Country</option>
                     </select>
-                    <select class="form-control d-inline  w-25 mx-2 my-2" name="cars" id="cars" form="carform">
+                    <select class="form-control text-white d-inline bg-spec-dark w-25 mx-2 my-2" name="cars" id="cars"
+                        form="carform">
                         <option value="volvo">Tour Type</option>
                     </select>
-                    <select class="form-control d-inline  w-25 mx-2 my-2" name="cars" id="cars" form="carform">
+                    <select class="form-control text-white d-inline bg-spec-dark w-25 mx-2 my-2" name="cars" id="cars"
+                        form="carform">
                         <option value="volvo">Budget</option>
                     </select>
                 </form>
@@ -33,6 +37,52 @@
         </div>
 
     </div>
+    <div class="row">
+        <div class="1-offset col-10 offset-1">
+            <div class="row">
+                <div class="col-4 continents">
+                        <h3>North America</h3>
+                        <img>
+
+                </div>
+                <div class="col-4 continents">
+                        <h3>Europe</h3>
+                        <img>
+
+                </div>
+                <div class="col-4 continents">
+                        <h3>Asia</h3>
+                       <img>
+                </div>
+                <div class="col-4 continents">
+                        <h3>Oceania</h3>
+                        <img>
+                    
+
+                </div>
+                <div class="col-4 continents">
+                        <h3>South America</h3>
+                        <img>
+                    
+
+                </div>
+                <div class="col-4 continents">
+                        <h3>Africa</h3>
+                        <img>
+                    
+
+                </div>
+                <div class="col-4 continents">
+                        <h3>Antarctica</h3>
+                        <img>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

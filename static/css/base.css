@@ -9,6 +9,10 @@
 
 
 /* ----- Colours */
+.text-white{
+    color: white;
+}
+
 .neon-blue{
 color: #15f4ee;
 }
@@ -17,6 +21,13 @@ color: #15f4ee;
     color:#39ff14;
 }
 
+.bg-dark{
+    background-color: #303030;
+}
+
+.bg-spec-dark{
+    background-color: #262626;
+}
 /* ----- Base*/
 .body{
     min-height: 100vh;
@@ -34,8 +45,9 @@ color: #15f4ee;
 }
 
 .spacer{
-    height: 7rem;
+    height: 6rem;
 }
+
 .index-bg {
   opacity: 0.2;
   background-color: #303030;
@@ -52,6 +64,59 @@ color: #15f4ee;
 
 .search-form{
     border: 0.1rem solid #39ff14;
-    background-color: #303030;
-    padding: 2.5rem;
+    padding: 1.5rem;
+}
+
+.form-control:focus {
+    color: #444;
+    background-color:#303030;
+    border-color: #739ac2;
+    outline: 0.5;
+
+}
+
+input { font-family: 'FontAwesome'; } 
+
+.wrapper input[type="text"]:before {
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 0px;
+    left: -5px;
+    content: "\f007";
+}
+
+.continents {
+  display: block;
+  position: relative;
+  margin: 40px 0;
+}
+
+.continents h3 {
+  font: bold 12px Sans-Serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #369;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 0 10px 0;
+  line-height: 24px;
+}
+
+/* Class name via Modernizr */
+.csstransforms .continents {
+  border-left: 34px solid #369;
+  padding-left: 10px;
+}
+.csstransforms .continents h3 {
+  /* Abs positioning makes it not take up vert space */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Border is the new background */
+  background: none;
+
+  /* Rotate from top left corner (not default) */
+  transform-origin: 0 0;
+  transform: rotate(90deg);
 }
