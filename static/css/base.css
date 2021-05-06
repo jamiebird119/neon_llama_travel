@@ -50,12 +50,12 @@ color: #15f4ee;
 
 .index-bg {
   opacity: 0.2;
+  overflow-y: hidden;
   background-color: #303030;
   position: absolute;
   left: 0;
   top: 0;
   width: 100vw;
-  height: auto;
 }
 
 .index-content {
@@ -84,39 +84,26 @@ input { font-family: 'FontAwesome'; }
     left: -5px;
     content: "\f007";
 }
-
+ 
 .continents {
-  display: block;
-  position: relative;
-  margin: 40px 0;
+  box-shadow: 10px 10px 10px #349;
+  background: #369;
 }
 
-.continents h3 {
-  font: bold 12px Sans-Serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: #369;
+.cont-img{
+    height: auto;
+    width: 100%;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.vert-head {
+  font: bold 1rem Sans-Serif;
   color: #fff;
-  padding: 5px 10px;
-  margin: 0 0 10px 0;
-  line-height: 24px;
+  writing-mode: vertical-rl;
+  margin: 0.5rem auto 0;
 }
 
 /* Class name via Modernizr */
-.csstransforms .continents {
-  border-left: 34px solid #369;
-  padding-left: 10px;
-}
-.csstransforms .continents h3 {
-  /* Abs positioning makes it not take up vert space */
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /* Border is the new background */
-  background: none;
-
-  /* Rotate from top left corner (not default) */
-  transform-origin: 0 0;
-  transform: rotate(90deg);
-}
