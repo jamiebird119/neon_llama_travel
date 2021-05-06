@@ -7,34 +7,22 @@
     font-family: 'Architects Daughter', cursive;
 }
 
-
-/* ----- Colours */
-.text-white{
-    color: white;
+.uppercase{
+    text-transform: uppercase;
 }
 
-.neon-blue{
-color: #15f4ee;
-}
 
-.neon-green{
-    color:#39ff14;
-}
 
-.bg-dark{
-    background-color: #303030;
-}
-
-.bg-spec-dark{
-    background-color: #262626;
-}
 /* ----- Base*/
 .body{
     min-height: 100vh;
+    max-width: 1350px;
+    
 }
 .navbar{
     padding-top:0.25rem;
     padding-bottom:0.25rem;
+    max-width: 1350px;
 }
 
 
@@ -42,6 +30,7 @@ color: #15f4ee;
 .container-wrap {
     position: relative;
     min-height: 100vh;
+    max-width: 1350px;
 }
 
 .spacer{
@@ -56,6 +45,7 @@ color: #15f4ee;
   left: 0;
   top: 0;
   width: 100vw;
+  max-width: 1350px;
 }
 
 .index-content {
@@ -86,7 +76,7 @@ input { font-family: 'FontAwesome'; }
 }
  
 .continents {
-  box-shadow: 10px 10px 10px #349;
+  box-shadow: 15px 20px 15px #349;
   background: #369;
 }
 
@@ -106,4 +96,56 @@ input { font-family: 'FontAwesome'; }
   margin: 0.5rem auto 0;
 }
 
-/* Class name via Modernizr */
+.countries{
+  box-shadow: 15px 20px 15px #197508;
+  background: #239e0d;
+}
+
+.top-deals{
+    box-shadow: 15px 20px 15px #ff073a;
+    background: #f8f8ff
+}
+
+.deals-img{
+    width: 100%;
+    height: auto;
+}
+
+.deals-head{
+    margin-top: 1rem;
+}
+
+.grow {
+     transition: all .2s ease-in-out;
+     }
+.grow:hover {
+     transform: scale(1.1); 
+    }
+/* ----- Colours */
+
+.text-white{
+    color: white;
+}
+
+.text-black{
+    color: black;
+}
+
+.neon-blue{
+color: #15f4ee;
+}
+
+.neon-red{
+    color:  #ff073a;
+}
+.neon-green{
+    color:#39ff14;
+}
+
+.bg-dark{
+    background-color: #303030;
+}
+
+.bg-spec-dark{
+    background-color: #262626;
+}

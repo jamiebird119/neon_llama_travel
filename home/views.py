@@ -5,6 +5,6 @@ import random
 
 def home(request):
     template = 'index.html'
-    bg_no=random.randint(0,4)
+    bg_no=random.randint(5,7)
     context={"bg_no": bg_no}
     return render(request, template, context)
