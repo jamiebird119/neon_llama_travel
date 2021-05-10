@@ -16,13 +16,13 @@
 /* ----- Base*/
 .body{
     min-height: 100vh;
-    max-width: 1350px;
+    max-width: 100vw;
     
 }
 .navbar{
     padding-top:0.25rem;
     padding-bottom:0.25rem;
-    max-width: 1350px;
+    max-width: 100vw;
 }
 
 
@@ -54,7 +54,20 @@
 
 .search-form{
     border: 0.1rem solid #39ff14;
-    padding: 1.5rem;
+}
+
+.search-control{
+    max-width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -1rem 1rem -1rem;
+}
+
+.form-control{
+    height: auto;
 }
 
 .form-control:focus {
@@ -65,7 +78,12 @@
 
 }
 
-input { font-family: 'FontAwesome'; } 
+input { 
+    font-family: 'FontAwesome';
+    display: block;
+    width: 100%;
+
+ } 
 
 .wrapper input[type="text"]:before {
     font-family: 'FontAwesome';
@@ -76,8 +94,9 @@ input { font-family: 'FontAwesome'; }
 }
  
 .continents {
-  box-shadow: 15px 20px 15px #349;
+  box-shadow: 0.5rem 0.8rem 0.5rem #349;
   background: #369;
+  margin: 0;
 }
 
 .cont-img{
@@ -97,12 +116,12 @@ input { font-family: 'FontAwesome'; }
 }
 
 .countries{
-  box-shadow: 15px 20px 15px #197508;
+  box-shadow: 0.5rem 0.8rem 0.5rem #197508;
   background: #239e0d;
 }
 
 .top-deals{
-    box-shadow: 15px 20px 15px #ff073a;
+    box-shadow: 0.5rem 0.8rem 0.5rem #ff073a;
     background: #f8f8ff
 }
 
@@ -142,6 +161,13 @@ color: #15f4ee;
     color:#39ff14;
 }
 
+.btn-secondary{
+    background-color: #369;
+}
+.btn-secondary:hover{
+    background-color: #349;
+}
+
 .bg-dark{
     background-color: #303030;
 }
@@ -149,3 +175,44 @@ color: #15f4ee;
 .bg-spec-dark{
     background-color: #262626;
 }
+
+
+/* Media Query */
+@media only screen and (min-width: 769px) and (min-height:376px) {
+  .form-col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .form-control{
+    height:  calc(1.5em + .75rem + 2px);
+  }
+
+  .form-col-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  
+  .offset-form-col-3 {
+    margin-left: 25%;
+  }
+  .form-check-inline{
+      margin: 0;
+  }
+  .form-group{
+      flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1023px) {
+  .search-control{
+    max-width: 25%;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+  
+}
+
+
+
+

@@ -7,44 +7,65 @@
 
 {% block content %}
 <div class="container-wrap">
-    <img class="index-bg" src="{{MEDIA_URL}}images//background{{bg_no}}.jpg" alt="">
+    <img class="index-bg d-none d-md-block text-center" src="{{MEDIA_URL}}images//background{{bg_no}}.jpg" alt="">
     <!-- SEARCH BAR -->
     <div class="index-content my-4">
         <div class="spacer"></div>
-        <div class="row mt-5">
+        <div class="row no-gutters mt-5">
             <div class="offset-2 col-8 offset-2 text-center">
                 <h4 class="architects neon-green">This is a Neon Llama</h4>
             </div>
-            <div class="offset-2 col-8 offset-2 text-center">
-                <form class="form-control search-form form-check-inline bg-dark">
-                    <input class="form-control text-white bg-spec-dark d-inline w-25 mx-2 my-2" type="text"
+            <div class="offset-2 col-8 d-none d-md-block text-center rounded">
+                <form class="form-control search-form form-check-inline bg-dark text-center">
+                    <input class="form-control text-white bg-spec-dark form-col-3 mx-1 ml-2" type="text"
                         placeholder="&#xf002; Search Tour">
-                    <select name="country" id="country" class="text-white form-control bg-spec-dark d-inline  w-25"
+                    <select name="country" id="country" class="text-white form-control bg-spec-dark form-col-3 mx-1"
                         form="search">
                         <option value="Country">Country</option>
                     </select>
-                    <select class="form-control text-white d-inline bg-spec-dark w-25 mx-2 my-2" name="cars" id="cars"
+                    <select class="form-control text-white d-block  bg-spec-dark form-col-3 mx-1" name="cars" id="cars"
                         form="carform">
                         <option value="volvo">Tour Type</option>
                     </select>
-                    <select class="form-control text-white d-inline bg-spec-dark w-25 mx-2 my-2" name="cars" id="cars"
+                    <select class="form-control text-white d-block  bg-spec-dark form-col-3 mx-1" name="cars" id="cars"
                         form="carform">
                         <option value="volvo">Budget</option>
                     </select>
+                    <button class="btn btn-secondary rounded submit mx-1" type="submit"> Search </button>
                 </form>
-
+                
+            </div>
+            <div class="offset-1 col-10 d-block d-md-none text-center rounded">
+                <form class="form-control bg-dark search-form">
+                    <input class="form-control text-white bg-spec-dark my-2 form-col-3" type="text"
+                        placeholder="&#xf002; Search Tour">
+                    <select class="text-white form-control bg-spec-dark form-col-3" name="country" id="country"
+                        form="search">
+                        <option value="Country">Country</option>
+                    </select>
+                    <select class="form-control text-white d-block  bg-spec-dark my-2 form-col-3" name="cars" id="cars"
+                        form="carform">
+                        <option value="volvo">Tour Type</option>
+                    </select>
+                    <select class="form-control text-white d-block  bg-spec-dark my-2 form-col-3" name="cars" id="cars"
+                        form="carform">
+                        <option value="volvo">Budget</option>
+                    </select>
+                    <button class="btn btn-secondary rounded submit" type="submit"> Search </button>
+                </form>
+                
             </div>
 
         </div>
 
     </div>
     <!-- CONTINENT SELECT -->
-    <div class="spacer"></div>
-    <div class="row">
+    <div class="spacer d-none d-md-block"></div>
+    <div class="row no-gutters">
         <div class="1-offset col-10 offset-1">
             <div class="row">
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -54,8 +75,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/Europe.png">
                         </div>
@@ -65,8 +86,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/Asia.png">
                         </div>
@@ -76,8 +97,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/SA.png">
                         </div>
@@ -87,8 +108,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/Oceania.png">
                         </div>
@@ -98,8 +119,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/Africa.png">
                         </div>
@@ -111,8 +132,8 @@
                 </div>
                 <div class="col-12 col-md-4">
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/Antarctica.png">
                         </div>
@@ -126,17 +147,17 @@
             </div>
         </div>
     </div>
-    <div class="spacer"></div>
-    <div class="row">
-        <div class="col-12 text-center my-5">
+    <div class="spacer d-none d-md-block"></div>
+    <div class="row no-gutters ">
+        <div class="col-12 text-center my-4">
             <h3 class="uppercase"><i class="neon-blue exo"> Trending</i>: Countries</h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row no-gutters">
         <div class="1-offset col-10 offset-1">
             <div class="row">
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -146,8 +167,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -157,8 +178,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -168,8 +189,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -179,8 +200,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -190,8 +211,8 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4 grow">
-                    <div class="continents countries row no-gutters m-5">
+                <div class="col-12 col-md-4 grow rounded">
+                    <div class="continents countries row no-gutters m-lg-5 my-4">
                         <div class="col-10">
                             <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
                         </div>
@@ -204,46 +225,46 @@
             </div>
         </div>
     </div>
-    <div class="spacer"></div>
-    <div class="row">
-        <div class="col-12 text-center my-5">
+    <div class="spacer d-none d-md-block"></div>
+    <div class="row no-gutters">
+        <div class="col-12 text-center my-3">
             <h3 class="uppercase"><i class="neon-blue exo"> Top Deals</i></h3>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
             <div class="1-offset col-10 offset-1">
                 <div class="row">
-                    <div class="col-12 col-md-4 grow">
-                        <div class="continents top-deals row no-gutters m-5">
+                    <div class="col-12 col-md-4 grow rounded m-lg-5 my-4">
+                        <div class="continents top-deals row no-gutters">
                             <div class="col-10">
                                 <img class="deals-img" src="{{MEDIA_URL}}images/indochina.png">
                             </div>
                             <div class="col-2">
-                                <h3 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
-                                    <i class="neon-red">25% OFF!</i></h3>
+                                <h4 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
+                                    <i class="neon-red">25% OFF!</i></h4>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 grow">
-                        <div class="continents top-deals row no-gutters m-5">
+                    <div class="col-12 col-md-4 grow rounded m-lg-5 my-4">
+                        <div class="continents top-deals row no-gutters">
                             <div class="col-10">
                                 <img class="deals-img" src="{{MEDIA_URL}}images/indochina.png">
                             </div>
                             <div class="col-2">
-                                <h3 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
-                                    <i class="neon-red">25% OFF!</i></h3>
+                                <h4 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
+                                    <i class="neon-red">25% OFF!</i></h4>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="continents top-deals row no-gutters m-5 grow">
+                    <div class="col-12 col-md-4 rounded m-lg-5 my-4">
+                        <div class="continents top-deals row no-gutters grow">
                             <div class="col-10">
                                 <img class="deals-img" src="{{MEDIA_URL}}images/indochina.png">
                             </div>
                             <div class="col-2">
-                                <h3 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
-                                    <i class="neon-red">25% OFF!</i></h3>
+                                <h4 class="vert-head deals-head text-center text-black align-middle">Indochina <br>
+                                    <i class="neon-red">25% OFF!</i></h4>
                             </div>
 
                         </div>
