@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="spacer"></div>
+<div class="container-wrap">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="neon-blue text-center">This is a Neon Llama</h1>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-1 d-block d-md-none">
+
+        </div>
+        <div class="col-10 col-md-2 text-center rounded">
+            <form class="tour_search_form search-form bg-dark text-center">
+                <input class="form-control tour_search_form text-white bg-spec-dark form-col-3" type="text"
+                placeholder="&#xf002; Search Tour">
+            <select name="Destination" id="Destination" class="form-control text-white tour_search_form bg-spec-dark form-col-3"
+                form="search">
+                <option value="Country">Destination</option>
+            </select>
+            <select class="form-control tour_search_form text-white d-block  bg-spec-dark form-col-3" name="cars" id="cars"
+                form="carform">
+                <option value="volvo">Tour Type</option>
+            </select>
+            <select class="form-control tour_search_form text-white d-block  bg-spec-dark form-col-3" name="cars" id="cars"
+                form="carform">
+                <option value="volvo">Budget</option>
+            </select>
+            <label class="text-white tour_search_form"> Likelihood of Llamas<span><input type="checkbox" id="llamas" class="mb-2 search-checkbox"></span> </label>
+            
+
+            <button class="btn btn-secondary rounded submit" type="submit"> Search </button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

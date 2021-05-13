@@ -1,0 +1,640 @@
+[
+    {
+        "model": "tours.category",
+        "pk": "1",
+        "fields": {
+            "id": "1",
+            "href": "https://rest.gadventures.com/tour_categories/1",
+            "name": "Activity",
+            "description": "Hang out in a hammock or hit the trail running, all G Adventures tours feature a mix of experiences geared towards popular interests. Our trips always include the must-sees and must-dos, and often appeal to nature enthusiasts, water sport fans and cultural buffs alike. If you\u2019re looking for something more specific like sailing or cycling, then choose your preferred activity icon to see what tours come up.",
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "11",
+        "fields": {
+            "id": "11",
+            "href": "https://rest.gadventures.com/tour_categories/11",
+            "name": "Yacht-based Adventures",
+            "description": "Few modes of travel feel freer than sailing. Glide wherever the wind takes you, where the only sounds are waves on the hull and ice in your drink. At the end of the day, moor in sheltered coves unreachable by any other means, or pull up to a dock in the middle of party central. Self-contained and independent, a sailboat frees you from the worries of both transport and accommodation, so you can choose to stay and explore, or move on with the next tide.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "12",
+        "fields": {
+            "id": "12",
+            "href": "https://rest.gadventures.com/tour_categories/12",
+            "name": "Chill Out",
+            "description": "Busy, busy, busy ... why is everyone always trying to make you DO something? Sometimes the best thing to do is nothing at all, and some places seem perfectly designed for ... well, nothing. Try \u201cbeing\u201d rather than \u201cbeing busy\u201d, and you might even discover another side of where or even who you are. So hang your hammock, grab a pina colada and kick back.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "127",
+        "fields": {
+            "id": "127",
+            "href": "https://rest.gadventures.com/tour_categories/127",
+            "name": "Marine",
+            "description": "Small-ship adventures on the world\u2019s great seas, rivers, and other places only accessible by boat.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "128",
+        "fields": {
+            "id": "128",
+            "href": "https://rest.gadventures.com/tour_categories/128",
+            "name": "Comfort",
+            "description": "Great adventures, genuine experiences, and insider access with a few extra frills along the way.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "129",
+        "fields": {
+            "id": "129",
+            "href": "https://rest.gadventures.com/tour_categories/129",
+            "name": "Local Living",
+            "description": "Intimate unpack-just-once adventures that bring out the best of the world\u2019s best destinations.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "13",
+        "fields": {
+            "id": "13",
+            "href": "https://rest.gadventures.com/tour_categories/13",
+            "name": "Festivals",
+            "description": "Every culture celebrates, and everyone loves a good party. There\u2019s no better way to sense the soul of a place and get insight into its people than through their festivals. Inhibitions are low, traditions are on parade and people show their true colours. Join in the fun, learn native dances, customs and music and connect on a local level.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "131",
+        "fields": {
+            "id": "131",
+            "href": "https://rest.gadventures.com/tour_categories/131",
+            "name": "Planeterra Project",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "132",
+        "fields": {
+            "id": "132",
+            "href": "https://rest.gadventures.com/tour_categories/132",
+            "name": "Bruce's Picks",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "133",
+        "fields": {
+            "id": "133",
+            "href": "https://rest.gadventures.com/tour_categories/133",
+            "name": "Staff Picks",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "134",
+        "fields": {
+            "id": "134",
+            "href": "https://rest.gadventures.com/tour_categories/134",
+            "name": "IDB Project",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "14",
+        "fields": {
+            "id": "14",
+            "href": "https://rest.gadventures.com/tour_categories/14",
+            "name": "Volunteer",
+            "description": "Taking in the sights, taking pictures, taking a bus, taking your time ... no wonder they call it taking a vacation. Instead of always taking something away when you travel, why not give something back? There's no better cultural immersion than to earn respect by working side by side with locals. The options are endless; pick one you're passionate about and leave the land, animals or people better off than before you arrived. The bonus is you may find you take away more from your travel than ever before.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "15",
+        "fields": {
+            "id": "15",
+            "href": "https://rest.gadventures.com/tour_categories/15",
+            "name": "Photography",
+            "description": "Are you a photo junkie? Then join the \u201csnap pack\u201d and travel to some of the most photogenic places on earth. Our photography trips put you on an itinerary specially geared towards getting the perfect pic, with a group of like-minded travellers. Learn new tricks, share your knowledge, and never worry about taking the time to get the shot. Bonus: someone always has an extra lens cap.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "16",
+        "fields": {
+            "id": "16",
+            "href": "https://rest.gadventures.com/tour_categories/16",
+            "name": "Travel Style",
+            "description": null,
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "17",
+        "fields": {
+            "id": "17",
+            "href": "https://rest.gadventures.com/tour_categories/17",
+            "name": "Active",
+            "description": "Hiking, trekking, biking, rafting, and kayaking adventures all over the world, made for outdoor types.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "18",
+        "fields": {
+            "id": "18",
+            "href": "https://rest.gadventures.com/tour_categories/18",
+            "name": "Family",
+            "description": "<strong>Trips built for adventurers of all ages </strong>\r\n<p>Just because you\u2019ve settled down and had kids doesn't mean your adventuring days are through. Family trips explore exciting locales &mdash; Tanzania, Thailand, the Gal\u00e1pagos, Europe and more &mdash; with age-appropriate activities and hotels that know how to cater to families on the move. </p>",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "2",
+        "fields": {
+            "id": "2",
+            "href": "https://rest.gadventures.com/tour_categories/2",
+            "name": "Culture/History",
+            "description": "For history hounds and culture vultures there's never a shortage of locations to indulge your curiosity and immerse yourself in the traditions of days gone by. Vibrant living cultures infused with the olden times offer a window into the past, and hold a mirror up to our own world.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "21",
+        "fields": {
+            "id": "21",
+            "href": "https://rest.gadventures.com/tour_categories/21",
+            "name": "Classic",
+            "description": "All of the highlights, culture, access, and I-can\u2019t-believe-we-did-that moments, all at a great price.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "25",
+        "fields": {
+            "id": "25",
+            "href": "https://rest.gadventures.com/tour_categories/25",
+            "name": "Discovery Adventures",
+            "description": "<strong>Say hello to your world.</strong>\r\n\r\n<p>Engage the extraordinary cultures, wildlife and landscapes through exhilarating, educational and immersive activities while achieving a greater appreciation for our planet. These trips are as much about doing as seeing &mdash; all with a comfortable feel.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "27",
+        "fields": {
+            "id": "27",
+            "href": "https://rest.gadventures.com/tour_categories/27",
+            "name": "18-to-Thirtysomethings",
+            "description": "Fast, fresh, and fun adventures that never slow down, made for young, budget-minded travellers.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "28",
+        "fields": {
+            "id": "28",
+            "href": "https://rest.gadventures.com/tour_categories/28",
+            "name": "Service Level",
+            "description": "Whether your adventure requires creature comforts or just the bare essentials, we have a Service Level to match your needs.",
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "29",
+        "fields": {
+            "id": "29",
+            "href": "https://rest.gadventures.com/tour_categories/29",
+            "name": "Basic",
+            "description": "Simple and clean hotels and hostels; affordable public and private transport; lots of optional activities.",
+            "category_type": 28
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "3",
+        "fields": {
+            "id": "3",
+            "href": "https://rest.gadventures.com/tour_categories/3",
+            "name": "Cycling",
+            "description": "Fast enough to cover serious ground but slow enough to smell the roses, a cycling tour might just be the perfect way to travel. It's cheap, pollution-free, and brings you closer to the locals. Whether cruising between wineries with a picnic basket or grinding over mountain passes, don't watch the landscape from a window, be part of it.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "30",
+        "fields": {
+            "id": "30",
+            "href": "https://rest.gadventures.com/tour_categories/30",
+            "name": "Standard",
+            "description": "Comfortable tourist-class accommodations with character; mix of public and private transport.",
+            "category_type": 28
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "31",
+        "fields": {
+            "id": "31",
+            "href": "https://rest.gadventures.com/tour_categories/31",
+            "name": "Upgraded",
+            "description": "Quality accommodations and more inclusions than on other G Adventures tours, like meals, private transport, and activities.",
+            "category_type": 28
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "318",
+        "fields": {
+            "id": "318",
+            "href": "https://rest.gadventures.com/tour_categories/318",
+            "name": "Rail",
+            "description": "Get closer to the big cities, isolated communities, and stunning landscapes of the world's greatest destinations via train-based adventures on iconic rail routes like the Glacier Express, the Darjeeling Himalayan Railway, and the Trans-Siberian.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "319",
+        "fields": {
+            "id": "319",
+            "href": "https://rest.gadventures.com/tour_categories/319",
+            "name": "Book of Dreams",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "320",
+        "fields": {
+            "id": "320",
+            "href": "https://rest.gadventures.com/tour_categories/320",
+            "name": "National Geographic Journeys",
+            "description": "Greater exploration, insider access, and the freedom to roam \u2013 all without sacrificing comfort.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "321",
+        "fields": {
+            "id": "321",
+            "href": "https://rest.gadventures.com/tour_categories/321",
+            "name": "Jane Goodall Collection",
+            "description": "A selection of wildlife-focused tours endorsed by world renowned primatologist Dr. Jane Goodall.  Your purchase of a Jane Goodall Collection tour helps G Adventures support the Jane Goodall Institute\u2019s mission to protect wildlife and empower local communities. <a href=\"/jane-goodall/?ref=trip\">Learn more</a>.\r\n",
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "322",
+        "fields": {
+            "id": "322",
+            "href": "https://rest.gadventures.com/tour_categories/322",
+            "name": "Award Winning Inca Trail Program",
+            "description": "Named Best Inca Trail Tour Operator by the Regional Direction of Foreign Trade and Tourism of Cusco (RDFTTC) in Peru. Your purchase of this tour helps employ over 560 local guides, porters, cooks, drivers, and office staff &mdash; connecting local communities to the global tourism chain. <a href=\"/travel-styles/active/hiking-trekking/inca-trail/?ref=trip-co\" style=\"font-weight: bold; color: white;\">Learn more</a>.",
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "323",
+        "fields": {
+            "id": "323",
+            "href": "https://rest.gadventures.com/tour_categories/323",
+            "name": "Wellness",
+            "description": "It\u2019s time to introduce your inner traveller to your inner self. Discover awe-inspiring destinations combined with rejuvenating activities like yoga and meditation, and healthy food experiences to recharge the body and nourish the mind.",
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "324",
+        "fields": {
+            "id": "324",
+            "href": "https://rest.gadventures.com/tour_categories/324",
+            "name": "TailorMade",
+            "description": "Create your own private adventure from a selection of unique itineraries that can be tailored to exactly what you like and how you want to see the world.",
+            "category_type": 58
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "325",
+        "fields": {
+            "id": "325",
+            "href": "https://rest.gadventures.com/tour_categories/325",
+            "name": "National Geographic Family Journeys",
+            "description": null,
+            "category_type": 16
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "33",
+        "fields": {
+            "id": "33",
+            "href": "https://rest.gadventures.com/tour_categories/33",
+            "name": "Physical Grading",
+            "description": "<p>To help you choose the adventure that\u2019s right for you, each of our trips is carefully evaluated based on its physical demands. Use the grading system to find the trip that\u2019s right for you.</p>\r\n\r\n<em> Many of our adventures include only one element that may affect the physical grading. You may be able to choose not to participate. For specific trip details, refer to each individual tour or contact your G Adventures specialist.</em>",
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "34",
+        "fields": {
+            "id": "34",
+            "href": "https://rest.gadventures.com/tour_categories/34",
+            "name": "1 - Easy",
+            "description": "Light walking, few climbs more challenging than a flight of stairs. Easy does it.",
+            "category_type": 33
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "35",
+        "fields": {
+            "id": "35",
+            "href": "https://rest.gadventures.com/tour_categories/35",
+            "name": "2 - Light",
+            "description": "Light walking and hiking suitable for most fitness levels. Nothing too challenging.",
+            "category_type": 33
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "358",
+        "fields": {
+            "id": "358",
+            "href": "https://rest.gadventures.com/tour_categories/358",
+            "name": "Day Tour",
+            "description": null,
+            "category_type": 58
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "359",
+        "fields": {
+            "id": "359",
+            "href": "https://rest.gadventures.com/tour_categories/359",
+            "name": "Travel with Confidence Plus",
+            "description": "This Collection of 37 incredible small group tours features everything we\u2019re doing as part of our Travel with Confidence Policy on all of our tours, PLUS added steps that go that extra, physically distanced mile.",
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "36",
+        "fields": {
+            "id": "36",
+            "href": "https://rest.gadventures.com/tour_categories/36",
+            "name": "3 - Average",
+            "description": "Some tours may include light hiking, biking, rafting, or kayaking in addition to walking.",
+            "category_type": 33
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "360",
+        "fields": {
+            "id": "360",
+            "href": "https://rest.gadventures.com/tour_categories/360",
+            "name": "Book Your Bubble",
+            "description": "The Book Your Bubble Collection is a collection of 80 G Adventures tours that give travellers and their hand-picked crew the safety of travelling with people they know, combined with extra benefits for booking private travel.",
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "361",
+        "fields": {
+            "id": "361",
+            "href": "https://rest.gadventures.com/tour_categories/361",
+            "name": "Mini Adventures",
+            "description": "Shorter itineraries that revolve around one specific destination, Mini Adventures are an easy way to add some more excitement before or after your multi-day tour, or to enjoy as a standalone experience.",
+            "category_type": 58
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "37",
+        "fields": {
+            "id": "37",
+            "href": "https://rest.gadventures.com/tour_categories/37",
+            "name": "4 - Demanding",
+            "description": "Some high-altitude hikes or more strenuous activities, but accessible to most healthy travellers.",
+            "category_type": 33
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "38",
+        "fields": {
+            "id": "38",
+            "href": "https://rest.gadventures.com/tour_categories/38",
+            "name": "5 - Challenging",
+            "description": "Serious high-altitude hikes, cycling, or other instances of heavy exercise. Come prepared to sweat a bit.",
+            "category_type": 33
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "39",
+        "fields": {
+            "id": "39",
+            "href": "https://rest.gadventures.com/tour_categories/39",
+            "name": "Merchandising",
+            "description": "Miscellaneous merchandising other properties of trips, such as new trips, wifi availability, all guaranteed departures, etc.",
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "4",
+        "fields": {
+            "id": "4",
+            "href": "https://rest.gadventures.com/tour_categories/4",
+            "name": "Expedition Cruising",
+            "description": "Cruising can have a bad rap among the adventure travel set. But cruises don't have to be all shuffleboard and late-night buffets. Some of the world's most pristine, remote places can only be reached from the water, and with G Adventures Expeditions, the most important element is the destination. Hop on board an expedition-style ship and change your image of cruising forever.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "41",
+        "fields": {
+            "id": "41",
+            "href": "https://rest.gadventures.com/tour_categories/41",
+            "name": "New Trips",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "42",
+        "fields": {
+            "id": "42",
+            "href": "https://rest.gadventures.com/tour_categories/42",
+            "name": "Top Seller",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "43",
+        "fields": {
+            "id": "43",
+            "href": "https://rest.gadventures.com/tour_categories/43",
+            "name": "Wifi",
+            "description": "This adventure boasts vans fitted with wi-fi for up to five users at a time. Check your email, upload a photo to Facebook, or send a tweet to your friends.",
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "5",
+        "fields": {
+            "id": "5",
+            "href": "https://rest.gadventures.com/tour_categories/5",
+            "name": "Family",
+            "description": "Trips built for adventurers of all ages with age-appropriate activities and hotels that know families.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "56",
+        "fields": {
+            "id": "56",
+            "href": "https://rest.gadventures.com/tour_categories/56",
+            "name": "Camping",
+            "description": "Camping most nights with some hotel stays to start and throughout; affordable public and private transport.",
+            "category_type": 28
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "58",
+        "fields": {
+            "id": "58",
+            "href": "https://rest.gadventures.com/tour_categories/58",
+            "name": "Trip Type",
+            "description": "Most of our trips bring together explorers from around the world, while others are made with the independent traveller in mind.",
+            "category_type": null
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "59",
+        "fields": {
+            "id": "59",
+            "href": "https://rest.gadventures.com/tour_categories/59",
+            "name": "Small Group",
+            "description": "Group trips average 12 travellers per departure, depending on the adventure. The maximum is usually no more than 16, but some can be smaller or bigger, depending on the trip. Check individual trips for details.",
+            "category_type": 58
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "6",
+        "fields": {
+            "id": "6",
+            "href": "https://rest.gadventures.com/tour_categories/6",
+            "name": "Kayak/Canoe",
+            "description": "Explore jungle-choked estuaries, navigate shallow man-made waterways or paddle from lake to lake and island to island - canoes and kayaks take you places nothing else can go. Human-powered and silent, a small boat lets you get up close and personal with nature. Come see the view from water level, at a speed you can take it all in at.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "60",
+        "fields": {
+            "id": "60",
+            "href": "https://rest.gadventures.com/tour_categories/60",
+            "name": "Independent Travel",
+            "description": "Independent trips are either entire trips you take privately or solo extensions to a group tour. Local staff are available on standby 24/7.",
+            "category_type": 58
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "62",
+        "fields": {
+            "id": "62",
+            "href": "https://rest.gadventures.com/tour_categories/62",
+            "name": "Limited Edition",
+            "description": null,
+            "category_type": 39
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "7",
+        "fields": {
+            "id": "7",
+            "href": "https://rest.gadventures.com/tour_categories/7",
+            "name": "Rafting",
+            "description": "Whether you're an adrenaline junkie or prefer a lazy float downstream, there\u2019s no better way to watch the landscape scroll by than to sit back and let the river do the work. That is, of course, unless you're hanging on for dear life as you crash through the churning white foam of a class V rapid. To see the world's wildest rivers in a way no human should (but almost anybody can), you can't beat rafting. Just hang on to your paddle.",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "8",
+        "fields": {
+            "id": "8",
+            "href": "https://rest.gadventures.com/tour_categories/8",
+            "name": "Trekking/Hiking",
+            "description": "As long as there have been mountains, people have felt compelled to climb them. Even if you aren't interested in crampons and first ascents, there's something particularly satisfying about hiking through the wild outdoors completely under your own leg power. So strap on some boots, get sweaty, and earn that view!",
+            "category_type": 1
+        }
+    },
+    {
+        "model": "tours.category",
+        "pk": "9",
+        "fields": {
+            "id": "9",
+            "href": "https://rest.gadventures.com/tour_categories/9",
+            "name": "Wildlife/Nature",
+            "description": "It's often said we don't truly appreciate something until we lose it. As the fragility of our natural world becomes more evident, we find ourselves increasingly drawn to places where we can reconnect with the earth, no longer just spectators, but a part of the planet. With little control over the experience, contact with untamed wildlife is a gift, a blessing, and a humbling reminder of how removed from nature our lives have become.",
+            "category_type": 1
+        }
+    }
+]
