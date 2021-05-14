@@ -1,32 +1,42 @@
 from django.contrib import admin
-from .models import Tour, Region, Category, Country, Geography
-
-# Register your models here.
+from .models import Tour, Region, Category, Country
 
 
 class TourAdmin(admin.ModelAdmin):
+    fields = (
+        "id",
+        "href",
+        "name",
+        "departures_start_date",
+        "departures_end_date",
+        "category",
+        "tour",
+        'details',
+        'description',
+        'images',
+        'site_links',
+        "departures_href",
+        "departures_list",
+        "from_price",
+        "region",
+        "start_country",
+        "finish_country",
+        "visited_countries"
+    )
     list_display = (
         "id",
         "href",
         "name",
-        "slug",
-        "product_line",
         "departures_start_date",
         "departures_end_date",
-        "description",
-        "booking_company",
         "structured_itineraries",
-        "category",
-        "details",
-        "images",
-        "site_links",
         "tour",
         "departures_href",
         "departures_list",
         "from_price"
     )
 
-    ordering = ()
+    ordering = ("id",)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -54,17 +64,9 @@ class RegionAdmin(admin.ModelAdmin):
         "name"
     )
 
-class GeographyAdmin(admin.ModelAdmin):
-    list_display = (
-         "geograpy",
-         "region",
-         "primary_country",
-         "start_country",
-         "finish_country"
-    )
 
 admin.site.register(Tour, TourAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(Region, RegionAdmin)
-admin.site.register(Geography, GeographyAdmin)
+
