@@ -25,18 +25,14 @@ class TourAdmin(admin.ModelAdmin):
     )
     list_display = (
         "id",
-        "href",
         "name",
-        "departures_start_date",
-        "departures_end_date",
-        "structured_itineraries",
-        "tour",
-        "departures_href",
+        "start_country",
+        "finish_country",
         "departures_list",
         "from_price"
     )
 
-    ordering = ("id",)
+    ordering = ("name",)
 
 
 class CategoryAdmin(admin.ModelAdmin):
