@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="image-container">
+    <img class="hero-image" src="{{ images.BANNER }}" alt="Banner">
+    <div class="header-div row">
+        <div class="col-12 col-md-10 offset-md-1">
+            <h4 class="text-white"> THIS IS WHERE LINKS GO </h4>
+            <h2 class="text-white"> {{ tour.name }}</h2>
+            <hr class="mb-5">
+        </div>
+    </div>
+</div>
+<div class="details">
+    <div class="row bg-dark-blue no-gutters">
+        <div class="col-12 col-md-8">
+            <div class="row no-gutters mt-3">
+                
+                <div class="col-12 col-md-6 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Travel Style </h4>
+                     <p> {{details.travel_style}} </p>
+                </div>
+                <div class="col-12 col-md-6 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Service Level </h4>
+                     <p> {{details.service_level}} </p>
+                </div>
+                <div class="col-12 col-md-6 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Physical Grading </h4>
+                     <p> {{details.physical_grading}} </p>
+                </div>
+                <div class="col-12 col-md-6 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Trip Type </h4>
+                     <p> {{details.trip_type}} </p>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="col-3 text-center bg-white rounded sticky">
+            <img class="map-image rounded" src="{{images.MAP}}">
+            <button class="btn btn-success w-100" type="">Book Now</button>
+        </div>
+        <div class="col-1">
+            
+        </div>
+    </div>
+    <div class="row bg-white no-gutters">
+        {% for key, value in details.items %}
+        <div class="col-12 col-md-8 mt-2 mx-5">
+            <button class="w-100 details-button" type="button" style="overflow: hidden;">
+                <div class="box">
+                    <hr class="bg-dark">
+                    <h4 class="text-black w-100 text-align-left">{{key}} <i class="float-right fas fa-chevron-down"></i></h4>
+                    <hr class="bg-dark">
+                </div>
+            </button>
+            <div class="details-body mt-2">
+                <p class="text-black">{{value}}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

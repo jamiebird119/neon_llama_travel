@@ -48,17 +48,17 @@ class Command(BaseCommand):
                                 tour_url = f"https://rest.gadventures.com/tour_dossiers/{item['id']}"
                                 print(tour_url)
                                 regions = {
-                                1: "AF",
-                                2: "AN",
-                                3: "AS",
-                                4: "EU",
-                                5: "NA",
-                                6: "OC",
-                                7: "SA",
-                                9: "EU",
-                                10:"AF",
-                                14:"OC"
-                            }
+                                    1: "AF",
+                                    2: "AN",
+                                    3: "AS",
+                                    4: "EU",
+                                    5: "NA",
+                                    6: "OC",
+                                    7: "SA",
+                                    9: "EU",
+                                    10: "AF",
+                                    14: "OC"
+                                }
                                 headers = {
                                     "X-Application-Key":
                                     f"{settings.G_KEY}",
@@ -66,7 +66,6 @@ class Command(BaseCommand):
                                 response = requests.get(
                                     tour_url, headers=headers)
                                 resource = response.json()
-                                print(resource)
                                 tour_details = {}
                                 tour = Tour(
                                     id=resource["id"],
@@ -74,14 +73,11 @@ class Command(BaseCommand):
                                     name=resource["name"],
                                     slug=resource["slug"],
                                     product_line=resource["product_line"],
-                                    departures_start_date=resource["departures_start_date"],
-                                    departures_end_date=resource["departures_end_date"],
                                     description=resource["description"],
-                                    structured_itineraries=resource["structured_itineraries"][0]["href"],
+                                    structured_itinerary=resource["structured_itineraries"][0]["href"],
                                     details=resource["details"],
                                     images=resource["images"],
                                     site_links=resource["site_links"],
-                                    tour=resource["id"],
                                     departures_href=resource["departures"]["href"],
                                     region=Region.objects.get(
                                         pk=regions[int(resource["geography"]["region"]["id"])]),
@@ -90,6 +86,14 @@ class Command(BaseCommand):
                                     finish_country=Country.objects.get(
                                         pk=resource["geography"]["finish_country"]["id"])
                                 )
+                                itin_response = requests.get(
+                                    resource["structured_itineraries"][0]["href"], headers=headers)
+                                itin_resource = itin_response.json()
+                                itinerary = {}
+                                for item in itin_resource["days"]:
+                                    itinerary[item["day"]] = {"summary": item["summary"],
+                                                              "label": item["label"]}
+                                tour.itinerary = [itinerary]
                                 tour.save()
                                 for i in resource["categories"]:
                                     tour.category.add(

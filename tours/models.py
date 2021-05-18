@@ -36,7 +36,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     href = models.URLField()
     description = models.CharField(max_length=3000, null=True)
-    category_type = models.ForeignKey("Category", on_delete=models.CASCADE, null=True)
+    category_type = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, related_name="category_group")
     def __str__(self):
         return self.name
 
@@ -51,12 +51,12 @@ class Tour(models.Model):
     departures_end_date = models.DateField(null=True)
     description = models.CharField(max_length=2000)
     booking_company = models.ForeignKey('Company', on_delete=models.CASCADE, null=True)
-    structured_itineraries = models.CharField(max_length=2000, null=True)
-    category = models.ManyToManyField('Category', blank=True)
+    structured_itinerary = models.CharField(max_length=2000, null=True)
+    itinerary = jsonfield.JSONField()
+    category = models.ManyToManyField('Category', blank=True, related_name="category_set")
     details = jsonfield.JSONField()
     images = jsonfield.JSONField()
     site_links = models.JSONField()
-    tour = models.CharField(max_length=300)
     departures_href = models.URLField()
     departures_list = ArrayField(
         models.DateField(null=True),

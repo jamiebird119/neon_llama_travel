@@ -169,6 +169,10 @@ color: #15f4ee;
     background-color: #303030;
 }
 
+.bg-dark-blue{
+    background-color: #04191F;
+}
+
 .bg-spec-dark{
     background-color: #262626;
 }
@@ -191,6 +195,47 @@ color: #15f4ee;
 }
 .checkboxes label span {
   vertical-align: middle;
+}
+
+
+/* ----- Tour details page  */
+.image-container{
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: clip;
+}
+
+.header-div{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-1.5rem;
+    background: linear-gradient(0deg, #04191FFF 5%, #04191F00 90%);
+}
+
+hr{
+    background-color: white;
+}
+
+.hero-image{
+    height: auto;
+    width:100%;
+    max-height: 100vh;
+    transition: opacity 500ms ease 0s;
+}
+
+.map-image{
+    width:100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    transition: opacity 500ms ease 0s;
+}
+
+.details-button{
+    border: none;
+    background-color: white;
+    transition: opacity 500ms ease 0s;
 }
 
 /* Media Query */

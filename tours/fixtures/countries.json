@@ -7998,5 +7998,21 @@
             "href": "https://rest.gadventures.com/countries/YE",
             "name": "Yemen"
         }
+    },
+    {
+        "model": "tours.country",
+        "pk": "ZW",
+        "fields": {
+            "href": "https://rest.gadventures.com/countries/ZE",
+            "name": "Zimbabwe"
+        }
+    },
+    {
+        "model": "tours.country",
+        "pk": "ZM",
+        "fields": {
+            "href": "https://rest.gadventures.com/countries/ZM",
+            "name": "Zambia"
+        }
     }
 ]
