@@ -1,1 +1,1 @@
-web: gunicorn neon-llama.wsgi
+web: gunicorn neon-llama.wsgi:application

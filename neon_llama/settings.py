@@ -32,7 +32,7 @@ G_KEY = os.environ.get('G_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','https://neon-llama.herokuapp.com/']
 
 
 # Application definition
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
-    'tours'
+    'tours',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -148,6 +149,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_LOCATION = 'media'
 
+USE_AWS_VAR = False
 if 'USE_AWS' in os.environ:
     USE_AWS_VAR = True
     AWS_S3_OBJECT_PARAMETERS = {
