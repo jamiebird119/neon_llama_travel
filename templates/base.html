@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div>
-            <a class="navbar-brand neon-green" href="#">Logo</a>
+            <a class="navbar-brand neon-green" href="{% url 'home' %}">Logo</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02"
                 aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon neon-green"></span>
@@ -41,7 +41,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto neon-green">
-                <li class="navlist">This </li>
+                <li class="navlist"><a class="neon-blue" href="{% url 'tour_search' %}">Tours</a></li>
                 <li class="navlist">Is </li>
                 <li class="navlist">A </li>
                 <li class="navlist">List </li>

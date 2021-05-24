@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="image-container">
+    <img class="hero-image" src="{{ images.BANNER }}" alt="Banner">
+    <div class="header-div row no-gutters">
+        <div class="col-12 col-md-10 offset-md-1 pl-3">
+            <h4 class="text-white"> THIS IS WHERE LINKS GO </h4>
+            <h2 class="text-white"> {{ tour.name }}</h2>
+            <hr class="mb-5">
+        </div>
+    </div>
+</div>
+<div class="under-image bg-dark-blue">
+    <div class="map-div">
+        <div class="map-container">
+            <div class="sticky-div rounded w-50 ml-4 sticky-top mt-4">
+                <div class="border-blue">
+                    <img class="map-image rounded-top" src="{{images.MAP}}">
+                    <button class="btn btn-secondary rounded-bottom w-100 py-3" type="">
+                        <h3>Book Now</h3>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-dark-blue details-container">
+        <div class="details-inner">
+            <div class="row no-gutters mt-3">
+                <div class="col-6 col-lg-4  text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Duration </h4>
+                    <p> {{itinerary|length}} Days </p>
+                </div>
+                <div class="col-6 col-lg-4  text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Travel Style </h4>
+                    <p> {{details.travel_style}} </p>
+                </div>
+                <div class="col-6 col-lg-4  text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Service Level </h4>
+                    <p> {{details.service_level}} </p>
+                </div>
+                <div class="col-6 col-lg-4 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Physical Grading </h4>
+                    <p> {{details.physical_grading}} </p>
+                </div>
+                <div class="col-6 col-lg-4  text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Trip Type </h4>
+                    <p> {{details.trip_type}} </p>
+                </div>
+                <div class="col-6 col-lg-4 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Meals Included </h4>
+                    <p> {{details.meals_included}} </p>
+                </div>
+                <div class="col-6 col-lg-4 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Group Size</h4>
+                    <p> {{details.group_size_notes}} </p>
+                </div>
+                <div class="col-6 col-lg-4 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Transport</h4>
+                    <p> {{details.transport}} </p>
+                </div>
+                <div class="col-3 d-none d-md-block d-lg-none"></div>
+                <div class="col-6 col-lg-4 text-center mt-2">
+                    <h4 class="neon-blue mt-1"><i class="fas fa-info-circle"></i> Accomodation</h4>
+                    <p> {{details.accommodation}} </p>
+                </div>
+                <div class="col-10  text-center mt-4 py-4">
+                    <h4 class="neon-green architects mt-1"><i class="fas fa-info-circle"></i> Highlights </h4>
+                    <p class="px-3"> {{details.highlights}} </p>
+                </div>
+                {% if "No optional activities" not in details.optional_activities %}
+                <div class="col-10 text-center mt-4">
+                    <h4 class="neon-green architects mt-1"><i class="fas fa-info-circle"></i> Optional Activities </h4>
+                    <p> {{details.optional_activities}} </p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="body-container">
+            <div class="row bg-white no-gutters">
+                <div class="col-12 col-md-7 text-center mx-4">
+                    <button class="text-black details-button" type="button" data-toggle="collapse"
+                        data-target="#CollapseItinerary" aria-expanded="false" aria-controls="CollapseItinerary">
+                        <hr class="bg-dark">
+                        <h3 class="text-black exo mx-2"> Itinerary </h3>
+                        <hr class="bg-dark">
+                    </button>
+                    <div class="collapse ml-3 my-3 mx-4" id="CollapseItinerary">
+                        {% for key, value in itinerary.items %}
+
+                        <h5 class="text-black">Day {{key}} - {{value.label}}</h5>
+                        <p class="mt-2 text-black"> {{value.summary}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 text-center mx-4">
+                    <button class="text-black details-button" type="button" data-toggle="collapse"
+                        data-target="#CollapsePackingList" aria-expanded="false" aria-controls="CollapsePackingList">
+                        <hr class="bg-dark">
+                        <h3 class="text-black exo mx-2"> Packing List </h3>
+                        <hr class="bg-dark">
+                    </button>
+                    <div class="collapse text-black my-3 ml-3" id="CollapsePackingList">
+                        {% for item in details.packing_list %}
+                        {% if ":" in item %}
+                        <h5 class=" mt-3 ml-2 mb-3 exo"><i>{{item}}</i></h5>
+                        {%else%}
+                        <p class="ml-2"> {{ item }} </p>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 text-center mx-4">
+                    <button class="text-black details-button" type="button" data-toggle="collapse"
+                        data-target="#CollapseInsurance" aria-expanded="false" aria-controls="CollapseInsurance">
+                        <hr class="bg-dark">
+                        <h3 class="text-black exo mx-2"> Insurance </h3>
+                        <hr class="bg-dark">
+                    </button>
+                    <div class="collapse text-black my-3 ml-3" id="CollapseInsurance">
+
+                        <p class="ml-2"> {{ details.travel_insurance }} </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="placeholder">
+
+</div>
+
+
+{% endblock %}

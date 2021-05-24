@@ -1,0 +1,58 @@
+[
+    {
+        "model": "tours.region",
+        "pk": "AF",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/AF",
+            "name": "Africa"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "AN",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/AN",
+            "name": "Antarctica"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "AS",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/AS",
+            "name": "Asia"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "EU",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/EU",
+            "name": "Europe"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "NA",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/NA",
+            "name": "North America"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "OC",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/OC",
+            "name": "Oceania"
+        }
+    },
+    {
+        "model": "tours.region",
+        "pk": "SA",
+        "fields": {
+            "href": "https://rest.gadventures.com/continents/SA",
+            "name": "South America"
+        }
+    }
+]
