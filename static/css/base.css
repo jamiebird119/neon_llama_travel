@@ -15,7 +15,7 @@
 
 /* ----- Base*/
 .body{
-    min-height: 100vh;
+    min-height: 150vh;
     max-width: 100vw;
     
 }
@@ -151,6 +151,10 @@ input {
 color: #15f4ee;
 }
 
+.border-blue{
+border: 2px solid #303030;
+
+}
 .neon-red{
     color:  #ff073a;
 }
@@ -200,17 +204,18 @@ color: #15f4ee;
 
 /* ----- Tour details page  */
 .image-container{
+    position: relative;
     width: 100%;
+    height:auto;
     max-height: 100vh;
-    overflow-y: clip;
+    overflow-y: hidden;
 }
 
+
 .header-div{
-    position:absolute;
-    left:0;
-    right:0;
+    position:relative;
     bottom:-1.5rem;
-    background: linear-gradient(0deg, #04191FFF 5%, #04191F00 90%);
+    background: linear-gradient(0deg, #04191FFF 20%, rgba(229, 233, 235, 0) 80%);
 }
 
 hr{
@@ -218,9 +223,11 @@ hr{
 }
 
 .hero-image{
+    position: relative;
     height: auto;
-    width:100%;
+    width:auto;
     max-height: 100vh;
+    max-width: 100vw;
     transition: opacity 500ms ease 0s;
 }
 
@@ -236,6 +243,47 @@ hr{
     border: none;
     background-color: white;
     transition: opacity 500ms ease 0s;
+    width: 100%;
+}
+.placeholder{
+    height: 500px;
+}
+.under-image{
+    height: 100%;
+    position: relative;
+}
+
+.sticky-div{
+    padding-top: 48px;
+}
+
+.map-div{
+    top: -16px;
+    width:100%;
+    height: 100%;
+    position: absolute;
+}
+.map-container{
+    top: -48;
+    right: 16px;
+    width: 50%;
+    height: 120vh;
+    padding: 1rem;
+    position: absolute;
+    z-index: 2;
+    margin-top: 48px;
+}
+
+.details-container{
+    width: 80%;
+    display: block;
+    position: relative;
+}
+
+.body-container{
+    position: relative;
+    top: 420px;
+    margin: 0 auto;  
 }
 
 /* Media Query */
@@ -250,18 +298,63 @@ hr{
       width: 20%;
       margin: 0;
   }
+  .details-container{
+      width: 60%;
+      display: inline-block;
+      position: relative;
+
+  }
+  .map-container{
+    width: 33%;
+    display: inline;
+    position: sticky;
+    top: 48px;
+    margin: 0 auto;
+}
+
+.hero-image{
+    height: auto;
+    width:100%;
+    max-height: 100vh;
+    max-width: 100vw;
+    z-index: 3;
+    background-color: #04191FFF;
+    transition: opacity 500ms ease 0s;
 }
 
 @media only screen and (min-width: 1023px) {
   .search-control{
     max-width: 25%;
+    }
+    .details-container{
+      width: 100%;
+      display: inline-block;
+      position: absolute;
+      
+    }
+    .details-inner{
+      width: 70%;
+    }
+    .map-container{
+        width: 30%;
+        float: right;
+        position: sticky;
+        top: 48px;
+    }
+
 }
+
+@media only screen and (min-width: 1026px) {
+    
 }
 
 @media only screen and (min-width: 1200px) {
-  
+.header-div{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-1rem;
+    z-index: 5;
+    background: linear-gradient(0deg, #04191FFF 00%, #04191F00 100%);
 }
-
-
-
-
+}
