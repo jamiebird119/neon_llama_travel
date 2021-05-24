@@ -32,7 +32,7 @@ G_KEY = os.environ.get('G_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','neon-llama.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost','neon-llama.herokuapp.com']
 
 
 # Application definition
