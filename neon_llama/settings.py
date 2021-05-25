@@ -149,7 +149,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_LOCATION = 'media'
 
-USE_AWS_VAR = False
+USE_AWS_VAR = True
 if 'USE_AWS' in os.environ:
     USE_AWS_VAR = True
     AWS_S3_OBJECT_PARAMETERS = {

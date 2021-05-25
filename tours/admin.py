@@ -24,6 +24,7 @@ class TourAdmin(admin.ModelAdmin):
         "name",
         "start_country",
         "finish_country",
+        "region",
         "departures_list",
         "from_price"
     )

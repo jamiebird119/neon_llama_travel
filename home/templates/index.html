@@ -30,12 +30,12 @@
                             form="search">
                             <option value="Country">Country</option>
                         </select>
-                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars" id="cars"
-                            form="carform">
+                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars"
+                            id="cars" form="carform">
                             <option value="volvo">Tour Type</option>
                         </select>
-                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars" id="cars"
-                            form="carform">
+                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars"
+                            id="cars" form="carform">
                             <option value="volvo">Budget</option>
                         </select>
                         <button class="btn btn-secondary rounded submit search-nav-item" type="submit"> Search </button>
@@ -58,83 +58,97 @@
         <div class="1-offset col-10 offset-1">
             <div class="row">
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">N. America</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=NA">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">N. America</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/Europe.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Europe</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=EU">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/Europe.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Europe</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/Asia.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Asia</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=AS">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/Asia.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Asia</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/SA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">S. America</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=SA">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/SA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">S. America</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/Oceania.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Oceania</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=OC">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/Oceania.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Oceania</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/Africa.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Africa</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=AF">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/Africa.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Africa</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4">
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/Antarctica.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Antarctica</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?region=AN">
+                        <div class="continents row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/Antarctica.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Antarctica</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
 
             </div>

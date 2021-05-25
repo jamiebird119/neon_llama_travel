@@ -23,6 +23,7 @@ class Command(BaseCommand):
             response = requests.get(url, headers=headers)
             resource = response.json()
             # CALCULATE NUMBER OF PAGE RESULTS AVAILABLE
+            print(resource)
             no_pages = math.ceil(
                 resource["count"]/resource["max_per_page"])
             page = 1
@@ -39,9 +40,36 @@ class Command(BaseCommand):
                             # CHECK IF TOUR IS IN DATABASE
                             tour = Tour.objects.get(
                                 pk=item["id"])
-                            self.stdout.write(self.style.ERROR(
-                                'Tour  "%s" already in database' % tour.name))
-                            continue
+                            tour_url = f"https://rest.gadventures.com/tour_dossiers/{item['id']}"
+                            regions = {
+                                1: "CA",
+                                2: "AN",
+                                3: "AS",
+                                4: "EU",
+                                5: "SA",
+                                6: "AF",
+                                7: "NA",
+                                9: "EU",
+                                10: "AF",
+                                14: "OC"
+                            }
+                            headers = {
+                                "X-Application-Key":
+                                f"{settings.G_KEY}",
+                            }
+                            response = requests.get(
+                                tour_url, headers=headers)
+                            resource = response.json()
+                            if tour.region.id != regions[int(resource["geography"]["region"]["id"])]:
+                                tour.update(region = Region.objects.get(
+                                            pk=regions[int(resource["geography"]["region"]["id"])]) )
+                                self.stdout.write(self.style.SUCCESS(
+                                    'Tour  "%s" already in database, region updated.' % tour.name))
+                            else:
+                                self.stdout.write(self.style.ERROR(
+                                    'Tour  "%s" already in database.' % tour.name))
+
+                                continue
                         except Exception as e:
                             try:
                                 # DOWNLOAD TOUR DATA FOR EACH TOUR AND SAVE
@@ -52,9 +80,9 @@ class Command(BaseCommand):
                                     2: "AN",
                                     3: "AS",
                                     4: "EU",
-                                    5: "NA",
+                                    5: "SA",
                                     6: "OC",
-                                    7: "SA",
+                                    7: "NA",
                                     9: "EU",
                                     10: "AF",
                                     14: "OC"
