@@ -15,26 +15,30 @@ def tour_search(request):
     region = None
     country = None
     name = None
+    header = None
     if request.GET:
         if "region" in request.GET:
             region = request.GET['region']
-            print(region)
+            header = Region(pk=region)
             query = Q(region__id__contains=region)
             qs = qs.filter(query).distinct()
-            print(qs)
         if "country" in request.GET:
             country = request.GET['country']
+            query = Q(start_country__name__contains=country)| Q(finish_country__name__contains=country)
+            qs = qs.filter(query).distinct()
+            if not region:
+                country_obj = get_object_or_404(Country, name=country)
+                region = country_obj.continent
         if "name" in request.GET:
             name = request.GET['name']
-        
+            query = Q(tour__name__icontains=country)| Q(tour__name__icontains=country)
+            qs = qs.filter(query).distinct()
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 games = games.annotate(lower_name=Lower('name'))
-            if sortkey == 'genre':
-                sortkey = 'genre__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -42,6 +46,7 @@ def tour_search(request):
             tours = qs.order_by(sortkey)
 
     tours = qs.order_by(sortkey)
+    responses_no = len(tours)
     paginator = Paginator(tours, 10)
     page = request.GET.get('page')
     try:
@@ -51,7 +56,12 @@ def tour_search(request):
     except EmptyPage:
         response = paginator.page(paginator.num_pages)
     context={
+        'region':region,
+        'country':country,
+        'name':name,
+        'header': header,
         'tours': response,
+        'responses_no': responses_no
     }
     template ='search.html'
     return render(request, template, context)

@@ -26,6 +26,7 @@ class Country(models.Model):
     id = models.CharField(max_length=30, primary_key=True)
     name = models.CharField(max_length=100)
     href = models.URLField(blank=True)
+    continent = models.ForeignKey("Region", on_delete=models.CASCADE, null=True, related_name="country_region")
 
     def __str__(self):
         return self.name

@@ -46,7 +46,8 @@ class CountryAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "href",
-        "name"
+        "name",
+        "continent"
     )
 
 
