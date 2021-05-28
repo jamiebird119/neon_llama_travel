@@ -42,9 +42,12 @@
   overflow-y: hidden;
   background-color: #303030;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+transform: translateX(-50%);
   width: 100vw;
+  margin: 0 auto;
   max-width: 1350px;
 }
 
@@ -147,6 +150,9 @@ input {
     color: black;
 }
 
+.text-grey{
+    color: grey;
+}
 .neon-blue{
 color: #15f4ee;
 }

@@ -37,7 +37,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     href = models.URLField()
     description = models.CharField(max_length=3000, null=True)
-    category_type = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, related_name="category_group")
+    category_type = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True, related_name="category_group")
     def __str__(self):
         return self.name
 

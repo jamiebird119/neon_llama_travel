@@ -8,44 +8,50 @@ import requests
 
 # Create your views here.
 def tour_search(request):
-    direction = None
-    sort = "id"
-    sortkey = sort
     qs = Tour.objects.all()
     region = None
     country = None
     name = None
     header = None
-    if request.GET:
-        if "region" in request.GET:
-            region = request.GET['region']
-            header = Region(pk=region)
-            query = Q(region__id__contains=region)
-            qs = qs.filter(query).distinct()
-        if "country" in request.GET:
-            country = request.GET['country']
-            query = Q(start_country__name__contains=country)| Q(finish_country__name__contains=country)
-            qs = qs.filter(query).distinct()
-            if not region:
+    trip_type = None
+    direction = request.GET.get('direcition', None)
+    sortkey = request.GET.get('sort', "id")
+
+    if request.method == "POST":
+        name = request.POST.get("name", None)
+        country = request.POST.get("country", None)
+        trip_type = request.POST.get("trip_type",None)
+    
+    if request.method == "GET":
+        region = request.GET.get("region", None)
+        country = request.GET.get("country", None)
+
+
+    if trip_type:
+        print(f"trip_type: {trip_type}")
+        query = Q(category__name__contains=trip_type)| Q(category__name__contains=trip_type)
+        qs = qs.filter(query).distinct()
+    if region:
+        query = Q(region__contains=region)| Q(region__contains=region)
+        qs = qs.filter(query).distinct()
+    if country:
+        print(f"country: {country}")
+        query = Q(start_country__name__contains=country)| Q(finish_country__name__contains=country)
+        qs = qs.filter(query).distinct()
+        if not region:
                 country_obj = get_object_or_404(Country, name=country)
                 region = country_obj.continent
-        if "name" in request.GET:
-            name = request.GET['name']
-            query = Q(tour__name__icontains=country)| Q(tour__name__icontains=country)
-            qs = qs.filter(query).distinct()
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                games = games.annotate(lower_name=Lower('name'))
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            tours = qs.order_by(sortkey)
+    if name:
+        query = Q(tour__name__icontains=name)| Q(tour__name__icontains=name)
+        qs = qs.filter(query).distinct()
 
+    if sortkey == 'name':
+        sortkey = 'lower_name'
+        games = games.annotate(lower_name=Lower('name'))
+        if direction == 'desc':
+            sortkey = f'-{sortkey}'
     tours = qs.order_by(sortkey)
+
     responses_no = len(tours)
     paginator = Paginator(tours, 10)
     page = request.GET.get('page')

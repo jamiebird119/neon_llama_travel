@@ -6,21 +6,21 @@
     <div class="row">
         <div class="col-md-2 text-center">
             {% if region %}
-              <a href="{% url 'tour_search' %}?region={{region}}">  {{ region }} </a>
+            <a href="{% url 'tour_search' %}?region={{region}}"> {{ region }} </a>
             {% endif %}
             {% if region and country %}
-             / 
+            /
             {% endif %}
             {% if country %}
-               <a href="{% url 'tour_search' %}?region={{country}}">{{ country }}</a> 
+            <a href="{% url 'tour_search' %}?country={{country}}">{{ country }}</a>
             {% endif %}
             {% if name %}
             <br>
-                {{responses_no}} {% if responses_no != 1 %}responses{%else%}response{% endif %} for search "{{name}}"
+            {{responses_no}} {% if responses_no != 1 %}responses{%else%}response{% endif %} for search "{{name}}"
             {% endif %}
             {% if category %}
             <br>
-                <a href="{% url 'tour_search' %}?category={{category}}">{{ category }}</a>
+            <a href="{% url 'tour_search' %}?category={{category}}">{{ category }}</a>
             {% endif %}
         </div>
         <div class="col-12 col-md-8 text-center">
@@ -68,12 +68,13 @@
                             <h4 class="exo neon-blue">{{tour.name}}</h4>
 
                             <p class="text-white"> {{tour.description}} </p>
-                            {% for type in tour.category.all %}
-                            <span><a href="{% url 'tour_search' %}?category={{type}}">
-                                    {{type.category_type.name}}: {{type}}</a>
-                            </span>
-                            {% endfor %}
-
+                            <div>
+                                {% for type in tour.category.all %}
+                                <span class="mr-1"> <a href="{% url 'tour_search' %}?category={{type}}">
+                                        {{type.category_type.name}}: {{type}} </a>
+                                </span>
+                                {% endfor %}
+                            </div>
                         </div>
 
                     </div>

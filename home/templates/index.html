@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{}
 {% load static %}
 {% block extra_css%}
 {{block.super}}
@@ -7,7 +7,9 @@
 
 {% block content %}
 <div class="container-wrap">
-    <img class="index-bg d-none d-md-block text-center" src="{{MEDIA_URL}}images//background{{bg_no}}.jpg" alt="">
+
+    <img class="index-bg d-none d-md-block text-center" src="{{MEDIA_URL}}images/background{{bg_no}}.jpg" alt="">
+
     <!-- SEARCH BAR -->
     <div class="index-content my-4">
         <div class="spacer"></div>
@@ -19,24 +21,30 @@
 
         <div class="row no-gutters">
             <div class="col-1">
-
             </div>
             <div class="col-10">
-                <form class="search-form form-control-inline bg-dark my-1 text-center">
+                <form id="search_form" class="search-form form-control-inline bg-dark my-1 text-center" action="{% url 'tour_search' %}" method="POST">
+                    {% csrf_token %}
                     <div class="row no-gutters">
-                        <input class="form-control text-white bg-spec-dark search-nav-item" type="text"
+                        <input class="form-control bg-spec-dark search-nav-item" type="text"
                             placeholder="&#xf002; Search Tour">
                         <select name="country" id="country" class="text-white form-control bg-spec-dark search-nav-item"
-                            form="search">
-                            <option value="Country">Country</option>
+                            form="search_form">
+                            <option class="text-grey"><i>Country</i></option>
+                            {% for item in countries %}
+                            <option values="{{item.name}}">{{item.name}}</option>
+                            {% endfor %}
                         </select>
-                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars"
-                            id="cars" form="carform">
-                            <option value="volvo">Tour Type</option>
+                        <select class="text-white  form-control d-block  bg-spec-dark search-nav-item" name="trip_type"
+                            id="trip_type" form="search_form">
+                            <option>Tour Type</option>
+                            {% for item in trip_type %}
+                            <option values="{{item.name}}">{{item.name}}</option>
+                            {% endfor %}
                         </select>
-                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="cars"
-                            id="cars" form="carform">
-                            <option value="volvo">Budget</option>
+                        <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="budget"
+                            id="budget" form="search_form">
+                            <option>Budget</option>
                         </select>
                         <button class="btn btn-secondary rounded submit search-nav-item" type="submit"> Search </button>
                     </div>
@@ -165,71 +173,81 @@
             <div class="row">
                 <div class="col-12 col-md-4 grow rounded">
                     <a href="{% url 'tour_search' %}?country=Thailand">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Thailand</h3>
-                        </div>
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Thailand</h3>
+                            </div>
 
-                    </div>
-                </a>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Peru</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?country=Peru">
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Peru</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Vietnam</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?country=Vietnam">
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Vietnam</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">New Zealand</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?country=New Zealand">
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">New Zealand</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">USA</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?country=United States">
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">USA</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 grow rounded">
-                    <div class="continents countries row no-gutters m-lg-5 my-4">
-                        <div class="col-10">
-                            <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
-                        </div>
-                        <div class="col-2">
-                            <h3 class="vert-head text-center align-middle">Cambodia</h3>
-                        </div>
+                    <a href="{% url 'tour_search' %}?country=Cambodia">
+                        <div class="continents countries row no-gutters m-lg-5 my-4">
+                            <div class="col-10">
+                                <img class="cont-img" src="{{MEDIA_URL}}images/NA.png">
+                            </div>
+                            <div class="col-2">
+                                <h3 class="vert-head text-center align-middle">Cambodia</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
