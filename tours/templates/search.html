@@ -44,49 +44,49 @@
                     form="search_form">
                     <option class="text-grey" value=""><i>Country</i></option>
                     {% for item in countries %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="branded"
                     id="branded" form="search_form">
                     <option  value="">Branded</option>
                     {% for item in categories.branded %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="physical_grading"
                     id="physical_grading" form="search_form">
                     <option  value="">Physical Grading</option>
                     {% for item in categories.physical_grading %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="service_level"
                     id="service_level" form="search_form">
                     <option  value="">Service Level</option>
                     {% for item in categories.service_level %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="travel_style"
                     id="travel_style" form="search_form">
                     <option  value="">Travel Style</option>
                     {% for item in categories.travel_style %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="activity"
                     id="activity" form="search_form">
                     <option  value="">Activity</option>
                     {% for item in categories.activity %}
-                    <option values="{{item.name}}">{{item.name}}</option>
+                    <option value="{{item.name}}">{{item.name}}</option>
                     {% endfor %}
                 </select>
                 <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="trip_type"
                             id="trip_type" form="search_form">
                             <option  value="">Trip Type</option>
                             {% for item in categories.trip_type %}
-                            <option values="{{item.name}}">{{item.name}}</option>
+                            <option value="{{item.name}}">{{item.name}}</option>
                             {% endfor %}
                         </select>
                 <select class="form-control text-white d-block  bg-spec-dark form-col-3" name="budget" id="budget"
