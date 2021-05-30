@@ -30,21 +30,21 @@
                             placeholder="&#xf002; Search Tour">
                         <select name="country" id="country" class="text-white form-control bg-spec-dark search-nav-item"
                             form="search_form">
-                            <option class="text-grey"><i>Country</i></option>
-                            {% for item in countries %}
+                            <option class="text-grey" values=""><i>Country</i></option>
+                            {% for item in categories.countries %}
                             <option values="{{item.name}}">{{item.name}}</option>
                             {% endfor %}
                         </select>
                         <select class="text-white  form-control d-block  bg-spec-dark search-nav-item" name="trip_type"
                             id="trip_type" form="search_form">
-                            <option>Tour Type</option>
-                            {% for item in trip_type %}
+                            <option values="">Tour Type</option>
+                            {% for item in categories.trip_type %}
                             <option values="{{item.name}}">{{item.name}}</option>
                             {% endfor %}
                         </select>
                         <select class="form-control text-white d-block  bg-spec-dark search-nav-item" name="budget"
                             id="budget" form="search_form">
-                            <option>Budget</option>
+                            <option values="">Budget</option>
                         </select>
                         <button class="btn btn-secondary rounded submit search-nav-item" type="submit"> Search </button>
                     </div>

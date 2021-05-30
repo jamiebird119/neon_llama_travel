@@ -14,28 +14,58 @@ def tour_search(request):
     name = None
     header = None
     trip_type = None
-    direction = request.GET.get('direcition', None)
+    branded = None
+    service_level = None
+    physical_grading = None
+    travel_style = None
+    activity = None
+    direction = request.GET.get('direction', None)
     sortkey = request.GET.get('sort', "id")
 
     if request.method == "POST":
         name = request.POST.get("name", None)
         country = request.POST.get("country", None)
         trip_type = request.POST.get("trip_type",None)
-    
+        branded = request.POST.get("branded", None)
+        service_level = request.POST.get("service_level",None)
+        physical_grading = request.POST.get("physical_grading", None)
+        travel_style = request.POST.get("travel_style", None)
+        activity = request.POST.get("activity", None)
+        page = request.POST.get('page', None)
+
     if request.method == "GET":
         region = request.GET.get("region", None)
         country = request.GET.get("country", None)
-
+        trip_type = request.GET.get("trip_type",None)
+        branded = request.GET.get("branded",None)
+        service_level = request.GET.get("service_level",None)
+        physical_grading = request.GET.get("physical_grading", None)
+        travel_style = request.GET.get("travel_style", None)
+        activity = request.GET.get("activity", None)
+        page = request.GET.get('page', None)
 
     if trip_type:
-        print(f"trip_type: {trip_type}")
         query = Q(category__name__contains=trip_type)| Q(category__name__contains=trip_type)
         qs = qs.filter(query).distinct()
+    if branded:
+        query = Q(category__name__contains=branded)| Q(category__name__contains=branded)
+        qs = qs.filter(query).distinct()
+    if activity:
+        query = Q(category__name__contains=activity)| Q(category__name__contains=activity)
+        qs = qs.filter(query).distinct()
+    if service_level:
+        query = Q(category__name__contains=service_level)| Q(category__name__contains=service_level)
+        qs = qs.filter(query).distinct()
+    if physical_grading:
+        query = Q(category__name__contains=physical_grading)| Q(category__name__contains=physical_grading)
+        qs = qs.filter(query).distinct()
+    if travel_style:
+        query = Q(category__name__contains=travel_style)| Q(category__name__contains=travel_style)
+        qs = qs.filter(query).distinct()
     if region:
-        query = Q(region__contains=region)| Q(region__contains=region)
+        query = Q(region=region)| Q(region=region)
         qs = qs.filter(query).distinct()
     if country:
-        print(f"country: {country}")
         query = Q(start_country__name__contains=country)| Q(finish_country__name__contains=country)
         qs = qs.filter(query).distinct()
         if not region:
@@ -53,21 +83,46 @@ def tour_search(request):
     tours = qs.order_by(sortkey)
 
     responses_no = len(tours)
-    paginator = Paginator(tours, 10)
-    page = request.GET.get('page')
+    paginator = Paginator(tours, 20)
+    no_info = False
+    if len(tours) == 0:
+        no_info = True
+    no_of_pages = int(responses_no/20)
+
     try:
         response = paginator.page(page)
     except PageNotAnInteger:
         response = paginator.page(1)
+        page = 1
     except EmptyPage:
         response = paginator.page(paginator.num_pages)
+    
+    if page == no_of_pages:
+        prev_p = int(page) - 1
+        next_p = None
+    elif page == 1:
+        next_p = 2
+        prev_p = None
+    else:
+        next_p = int(page) + 1 
+        prev_p = int(page) - 1
     context={
+        'activity': activity,
         'region':region,
         'country':country,
         'name':name,
         'header': header,
         'tours': response,
-        'responses_no': responses_no
+        'responses_no': responses_no,
+        'no_of_pages': no_of_pages,
+        'next': next_p,
+        'prev' : prev_p,
+        'page': page,
+        'no_info': no_info,
+        'branded':branded,
+        'service_level': service_level,
+        'physical_grading': physical_grading,
+        'travel_style': travel_style
     }
     template ='search.html'
     return render(request, template, context)

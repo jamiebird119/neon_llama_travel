@@ -32,7 +32,7 @@ G_KEY = os.environ.get('G_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','neon-llama.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'neon-llama.herokuapp.com']
 
 
 # Application definition
@@ -152,41 +152,40 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIAFILES_LOCATION = 'media'
 
 
-#if 'USE_AWS' in os.environ:
-#    USE_AWS_VAR = True
-#    AWS_S3_OBJECT_PARAMETERS = {
- #       'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#        'CacheControl': 'max-age=94608000',
-#    }
-#
-#    # BUCKET CONFIG
-#    AWS_STORAGE_BUCKET_NAME = 'neon-llama'
-#    AWS_S3_REGION_NAME = 'eu-west-2'
-#    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-#    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-#    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-#
-#    # Static and Media files vars
-#    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-#    STATICFILES_LOCATION = 'static'
-#    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-#    MEDIAFILES_LOCATION = 'media'
-#
-#    # Override files locations
-#    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+if 'USE_AWS' in os.environ:
+    USE_AWS_VAR = True
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # BUCKET CONFIG
+    AWS_STORAGE_BUCKET_NAME = 'neon-llama'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and Media files vars
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override files locations
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
+    #Default primary key field type
+    #https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-## Default primary key field type
-## https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-#
-#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#
-#ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
-#ACCOUNT_EMAIL_REQUIRED = True
-#ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-#ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-#ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 # 1 day in seconds
-#ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
-#LOGIN_REDIRECT_URL = '/accounts/email/' # default to /accounts/profile 
+    DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+    ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
+    ACCOUNT_EMAIL_REQUIRED = True
+    ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+    ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+    ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 # 1 day in seconds
+    ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+    LOGIN_REDIRECT_URL = '/accounts/email/' # default to /accounts/profile

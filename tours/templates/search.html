@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load format_cat %}
 {% block content %}
 <div class="spacer"></div>
 <div class="container-wrap">
@@ -35,20 +35,63 @@
 
         </div>
         <div class="col-10 col-md-2 text-center rounded">
-            <form class="tour_search_form search-form bg-dark text-center">
-                <input class="form-control tour_search_form text-white bg-spec-dark form-col-3" type="text"
+            <form id="search_form" method="POST" action="{% url 'tour_search' %}" class="tour_search_form search-form bg-dark text-center">
+                {% csrf_token %}
+                <input name="" class="form-control tour_search_form text-white bg-spec-dark form-col-3" type="text"
                     placeholder="&#xf002; Search Tour">
-                <select name="Destination" id="Destination"
-                    class="form-control text-white tour_search_form bg-spec-dark form-col-3" form="search">
-                    <option value="Country">Destination</option>
+
+                <select name="country" id="country" class="text-white form-control bg-spec-dark form-col-3"
+                    form="search_form">
+                    <option class="text-grey" value=""><i>Country</i></option>
+                    {% for item in categories.countries %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
                 </select>
-                <select class="form-control tour_search_form text-white d-block  bg-spec-dark form-col-3" name="cars"
-                    id="cars" form="carform">
-                    <option value="volvo">Tour Type</option>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="branded"
+                    id="branded" form="search_form">
+                    <option  value="">Branded</option>
+                    {% for item in categories.branded %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
                 </select>
-                <select class="form-control tour_search_form text-white d-block  bg-spec-dark form-col-3" name="cars"
-                    id="cars" form="carform">
-                    <option value="volvo">Budget</option>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="physical_grading"
+                    id="physical_grading" form="search_form">
+                    <option  value="">Physical Grading</option>
+                    {% for item in categories.physical_grading %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="service_level"
+                    id="service_level" form="search_form">
+                    <option  value="">Service Level</option>
+                    {% for item in categories.service_level %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="travel_style"
+                    id="travel_style" form="search_form">
+                    <option  value="">Travel Style</option>
+                    {% for item in categories.travel_style %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="activity"
+                    id="activity" form="search_form">
+                    <option  value="">Activity</option>
+                    {% for item in categories.activity %}
+                    <option values="{{item.name}}">{{item.name}}</option>
+                    {% endfor %}
+                </select>
+                <select class="text-white  form-control d-block  bg-spec-dark form-col-3" name="trip_type"
+                            id="trip_type" form="search_form">
+                            <option  value="">Trip Type</option>
+                            {% for item in categories.trip_type %}
+                            <option values="{{item.name}}">{{item.name}}</option>
+                            {% endfor %}
+                        </select>
+                <select class="form-control text-white d-block  bg-spec-dark form-col-3" name="budget" id="budget"
+                    form="search_form">
+                    <option  value="">Budget</option>
                 </select>
                 <label class="text-white tour_search_form"> Likelihood of Llamas<span><input type="checkbox" id="llamas"
                             class="mb-2 search-checkbox"></span> </label>
@@ -59,6 +102,12 @@
         </div>
         <div class="col-9 col-md-9 search-form p-2">
             <div class="row not-gutters">
+                {% if no_info %}
+                    <div class="col-12 text-center">
+                        <h5> No Tours available for current search</h5>
+                        <h6> Please Try again</h6> 
+                    </div>
+                {% endif %}
                 {% if tours %}
                 {% for tour in tours %}
                 <a class="card" href="{% url 'tour_details' tour.id %}">
@@ -70,7 +119,7 @@
                             <p class="text-white"> {{tour.description}} </p>
                             <div>
                                 {% for type in tour.category.all %}
-                                <span class="mr-1"> <a href="{% url 'tour_search' %}?category={{type}}">
+                                <span class="mr-1"> <a href="{% url 'tour_search' %}?{{type.category_type.name | lower_replace}}={{type}}">
                                         {{type.category_type.name}}: {{type}} </a>
                                 </span>
                                 {% endfor %}
@@ -81,6 +130,20 @@
                 </a>
                 {% endfor %}
                 {% endif %}
+                <div class="col-2"></div>
+                 <div class="col-8 text-center">
+                        {% if prev %}
+                            <a class="btn neon-blue" href="{% url 'tour_search' %}">Prev</a>
+                        {% endif %}
+                        <h6 class="btn" >{{page}}</h6>
+                        {% if next %}
+                            <a class="btn neon-blue" href="{% url 'tour_search' %}?{% if region %}region={{region}}&{%endif%}{% if country %}country={{country}}&{%endif%}page={{next}}"
+                            >Next</a>
+                        {% endif %}
+                    </div>
+                <div class="col-2">
+                    <h6 class="text-grey"> Page {{page}} of {{ no_of_pages }} </h6>
+                </div>
             </div>
         </div>
     </div>

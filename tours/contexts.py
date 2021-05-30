@@ -30,4 +30,4 @@ def category(request):
         for cat in filtered:
             item_vars.append(cat)
         categories[item.name.lower().replace(" ","_")] = item_vars
-    return categories
+    return {"categories": categories}
