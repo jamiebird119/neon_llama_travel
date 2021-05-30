@@ -31,7 +31,7 @@
                         <select name="country" id="country" class="text-white form-control bg-spec-dark search-nav-item"
                             form="search_form">
                             <option class="text-grey" values=""><i>Country</i></option>
-                            {% for item in categories.countries %}
+                            {% for item in countries %}
                             <option values="{{item.name}}">{{item.name}}</option>
                             {% endfor %}
                         </select>
