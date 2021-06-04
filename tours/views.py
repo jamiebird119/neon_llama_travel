@@ -23,6 +23,7 @@ def tour_search(request):
     activity = None
     direction = request.GET.get('direction', None)
     sortkey = request.GET.get('sort', "id")
+    current = {}
 
     if request.method == "POST":
         name = request.POST.get("name", None)
@@ -36,6 +37,7 @@ def tour_search(request):
         page = request.POST.get('page', None)
 
     if request.method == "GET":
+        name = request.POST.get("name", None)
         region = request.GET.get("region", None)
         country = request.GET.get("country", None)
         trip_type = request.GET.get("trip_type", None)
@@ -50,39 +52,48 @@ def tour_search(request):
         query = Q(category__name__contains=trip_type) | Q(
             category__name__contains=trip_type)
         qs = qs.filter(query).distinct()
+        current["trip_type"] = trip_type
     if branded:
         query = Q(category__name__contains=branded) | Q(
             category__name__contains=branded)
         qs = qs.filter(query).distinct()
+        current["branded"] = branded
     if activity:
         query = Q(category__name__contains=activity) | Q(
             category__name__contains=activity)
         qs = qs.filter(query).distinct()
+        current["activity"] = activity
     if service_level:
         query = Q(category__name__contains=service_level) | Q(
             category__name__contains=service_level)
         qs = qs.filter(query).distinct()
+        current["service_level"] = service_level
     if physical_grading:
         query = Q(category__name__contains=physical_grading) | Q(
             category__name__contains=physical_grading)
         qs = qs.filter(query).distinct()
+        current["physical_grading"] = physical_grading
     if travel_style:
         query = Q(category__name__contains=travel_style) | Q(
             category__name__contains=travel_style)
         qs = qs.filter(query).distinct()
+        current["travel_style"] = travel_style
     if region:
         query = Q(region=region) | Q(region=region)
         qs = qs.filter(query).distinct()
+        region = get_object_or_404(Region, id=region)
     if country:
         query = Q(start_country__name__contains=country) | Q(
             finish_country__name__contains=country)
         qs = qs.filter(query).distinct()
+        current["country"] = country
         if not region:
             country_obj = get_object_or_404(Country, name=country)
             region = country_obj.continent
     if name:
         query = Q(tour__name__icontains=name) | Q(tour__name__icontains=name)
         qs = qs.filter(query).distinct()
+        current["name"] = name
 
     if sortkey == 'name':
         sortkey = 'lower_name'
@@ -90,7 +101,11 @@ def tour_search(request):
         if direction == 'desc':
             sortkey = f'-{sortkey}'
     tours = qs.order_by(sortkey)
-
+    current_url="?"
+    if current:
+        for key, value in current.items():
+            string = f"{key}={value}&"
+            current_url += string
     responses_no = len(tours)
     paginator = Paginator(tours, 20)
     no_info = False
@@ -131,7 +146,8 @@ def tour_search(request):
         'branded': branded,
         'service_level': service_level,
         'physical_grading': physical_grading,
-        'travel_style': travel_style
+        'travel_style': travel_style,
+        'current_url': current_url
     }
     template = 'search.html'
     return render(request, template, context)
@@ -144,7 +160,6 @@ def tour_details(request, tour_id):
     itinerary = {}
     try:
         for item in json.loads(tour.images):
-            print(item)
             images[item["type"]] = item["image_href"]
         for item in tour.category.all():
             details[item.category_type.name.lower().replace(" ", "_")
@@ -159,7 +174,8 @@ def tour_details(request, tour_id):
 
         for item in json.loads(tour.itinerary)[0]:
             itinerary[item] = json.loads(tour.itinerary)[0][item]
-            
+        
+        print(details)
         context = {
             'tour': tour,
             "images": images,
@@ -171,7 +187,6 @@ def tour_details(request, tour_id):
 
     except Exception as e:
         for item in json.loads(json.loads(tour.images)):
-            print(item)
             images[item["type"]] = item["image_href"]
         for item in tour.category.all():
             details[item.category_type.name.lower().replace(" ", "_")
@@ -186,7 +201,7 @@ def tour_details(request, tour_id):
 
         for item in json.loads(json.loads(tour.itinerary))[0]:
             itinerary[item] = json.loads(json.loads(tour.itinerary))[0][item]
-
+    print(details)
     context = {
         'tour': tour,
         "images": images,
